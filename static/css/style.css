@@ -1,0 +1,365 @@
+/* ===========================
+   NATURE-INSPIRED PORTFOLIO
+   Organic · Handcrafted · Warm
+   =========================== */
+
+/* ---------- Custom Properties ---------- */
+:root {
+  --primary: #6B8F71;
+  --primary-dark: #4a6e50;
+  --primary-light: #8aad8f;
+  --secondary: #A3B18A;
+  --secondary-light: #bcc9a7;
+  --bg: #F4F1EC;
+  --bg-alt: #EDE8E0;
+  --accent: #DAD7CD;
+  --text: #344E41;
+  --text-light: #5c7a65;
+  --text-muted: #7a8f7e;
+  --white: #FDFCFA;
+}
+
+/* ---------- Base & Scrollbar ---------- */
+* { box-sizing: border-box; }
+
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: var(--secondary); border-radius: 99px; }
+::-webkit-scrollbar-thumb:hover { background: var(--primary); }
+
+html { scroll-behavior: smooth; }
+
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: 'Lora', 'Georgia', serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ---------- Typography ---------- */
+.font-heading {
+  font-family: 'Playfair Display', 'Georgia', serif;
+}
+
+.gradient-leaf {
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ---------- Organic Shapes ---------- */
+.blob-1 {
+  border-radius: 60% 40% 55% 45% / 50% 60% 40% 50%;
+}
+
+.blob-2 {
+  border-radius: 45% 55% 40% 60% / 55% 45% 60% 40%;
+}
+
+.blob-3 {
+  border-radius: 50% 50% 45% 55% / 40% 60% 40% 60%;
+}
+
+/* ---------- Floating Animation ---------- */
+@keyframes gentle-float {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  33% { transform: translateY(-8px) rotate(1deg); }
+  66% { transform: translateY(-4px) rotate(-1deg); }
+}
+
+.animate-gentle-float {
+  animation: gentle-float 6s ease-in-out infinite;
+}
+
+@keyframes sway {
+  0%, 100% { transform: rotate(-2deg); }
+  50% { transform: rotate(2deg); }
+}
+
+.animate-sway {
+  animation: sway 4s ease-in-out infinite;
+}
+
+@keyframes drift {
+  0%, 100% { transform: translate(0, 0); }
+  25% { transform: translate(5px, -5px); }
+  50% { transform: translate(-3px, -8px); }
+  75% { transform: translate(-5px, -3px); }
+}
+
+.animate-drift {
+  animation: drift 8s ease-in-out infinite;
+}
+
+/* ---------- Leaf Decoration ---------- */
+.leaf-decoration {
+  position: relative;
+}
+
+.leaf-decoration::before {
+  content: '🌿';
+  position: absolute;
+  font-size: 1.2rem;
+  opacity: 0.4;
+}
+
+/* ---------- Card Styles ---------- */
+.nature-card {
+  background: var(--white);
+  border: 1px solid var(--accent);
+  border-radius: 1.25rem;
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.nature-card:hover {
+  transform: translateY(-6px);
+  box-shadow:
+    0 20px 40px rgba(107, 143, 113, 0.12),
+    0 8px 16px rgba(107, 143, 113, 0.08);
+  border-color: var(--secondary);
+}
+
+/* ---------- Button Styles ---------- */
+.btn-primary {
+  background-color: var(--primary);
+  color: var(--white);
+  padding: 0.75rem 1.75rem;
+  border-radius: 99px;
+  font-weight: 600;
+  font-size: 0.875rem;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  border: 2px solid var(--primary);
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-dark);
+  border-color: var(--primary-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(107, 143, 113, 0.3);
+}
+
+.btn-outline {
+  background-color: transparent;
+  color: var(--primary);
+  padding: 0.75rem 1.75rem;
+  border-radius: 99px;
+  font-weight: 600;
+  font-size: 0.875rem;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  border: 2px solid var(--primary);
+}
+
+.btn-outline:hover {
+  background-color: var(--primary);
+  color: var(--white);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(107, 143, 113, 0.2);
+}
+
+/* ---------- Section Dividers ---------- */
+.curve-divider {
+  position: relative;
+}
+
+.curve-divider svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* ---------- Nav Active Indicator ---------- */
+.nav-link {
+  position: relative;
+  color: var(--text-light);
+  transition: color 0.3s ease;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: var(--primary);
+  border-radius: 99px;
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
+}
+
+.nav-link:hover {
+  color: var(--primary);
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+/* ---------- Input Styles ---------- */
+.nature-input {
+  width: 100%;
+  padding: 0.875rem 1.25rem;
+  border-radius: 0.875rem;
+  background: var(--white);
+  border: 1.5px solid var(--accent);
+  color: var(--text);
+  font-size: 0.875rem;
+  font-family: inherit;
+  transition: all 0.3s ease;
+  outline: none;
+}
+
+.nature-input::placeholder {
+  color: var(--text-muted);
+}
+
+.nature-input:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(107, 143, 113, 0.15);
+}
+
+/* ---------- Skill Badge ---------- */
+.skill-badge {
+  background: var(--white);
+  border: 1.5px solid var(--accent);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  text-align: center;
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.skill-badge:hover {
+  transform: translateY(-6px) rotate(-1deg);
+  border-color: var(--secondary);
+  box-shadow:
+    0 16px 32px rgba(107, 143, 113, 0.1),
+    0 4px 8px rgba(107, 143, 113, 0.06);
+}
+
+.skill-badge i {
+  font-size: 2.25rem;
+  margin-bottom: 0.5rem;
+  transition: transform 0.3s ease;
+}
+
+.skill-badge:hover i {
+  transform: scale(1.15);
+}
+
+/* ---------- Project Card ---------- */
+.project-card {
+  background: var(--white);
+  border: 1.5px solid var(--accent);
+  border-radius: 1.5rem;
+  overflow: hidden;
+  transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.project-card:hover {
+  transform: translateY(-8px);
+  box-shadow:
+    0 24px 48px rgba(107, 143, 113, 0.12),
+    0 8px 16px rgba(107, 143, 113, 0.06);
+  border-color: var(--secondary);
+}
+
+.project-card .project-image {
+  transition: all 0.5s ease;
+}
+
+.project-card:hover .project-image {
+  transform: scale(1.05);
+}
+
+/* ---------- Social Icon ---------- */
+.social-icon {
+  width: 2.75rem;
+  height: 2.75rem;
+  border-radius: 0.75rem;
+  border: 1.5px solid var(--accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-muted);
+  background: var(--white);
+  transition: all 0.3s ease;
+}
+
+.social-icon:hover {
+  background: var(--primary);
+  border-color: var(--primary);
+  color: var(--white);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(107, 143, 113, 0.25);
+}
+
+/* ---------- Tag Pill ---------- */
+.tag-pill {
+  padding: 0.25rem 0.75rem;
+  border-radius: 99px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  background: rgba(107, 143, 113, 0.1);
+  color: var(--primary);
+  border: 1px solid rgba(107, 143, 113, 0.2);
+}
+
+/* ---------- Section Heading ---------- */
+.section-label {
+  color: var(--primary);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+  font-family: 'Inter', sans-serif;
+}
+
+.section-title {
+  font-family: 'Playfair Display', 'Georgia', serif;
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 1rem;
+}
+
+.section-divider-line {
+  width: 3rem;
+  height: 3px;
+  background: linear-gradient(90deg, var(--primary), var(--secondary));
+  border-radius: 99px;
+  margin: 0 auto;
+}
+
+/* ---------- Handwritten accent ---------- */
+.handwritten {
+  font-family: 'Caveat', cursive;
+}
+
+/* ---------- Background Patterns ---------- */
+.bg-dots {
+  background-image: radial-gradient(circle, var(--accent) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+.bg-nature {
+  background-color: var(--bg-alt);
+  background-image:
+    radial-gradient(ellipse at 20% 50%, rgba(107,143,113,0.06) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 20%, rgba(163,177,138,0.08) 0%, transparent 50%),
+    radial-gradient(ellipse at 50% 80%, rgba(218,215,205,0.1) 0%, transparent 50%);
+}
+
+/* ---------- Responsive helpers ---------- */
+@media (max-width: 768px) {
+  .section-title {
+    font-size: 1.75rem;
+  }
+}
