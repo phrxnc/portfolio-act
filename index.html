@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Franck Aming</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%23344E41'/><text x='50%25' y='55%25' dominant-baseline='middle' text-anchor='middle' font-family='Georgia,serif' font-size='14' font-weight='700' fill='%23F4F1EC'>FA</text></svg>" />
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
@@ -31,11 +32,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;600&family=Inter:wght@400;500;600&family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet" />
 
-  <!-- AOS(Animate On Scroll) -->
   <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
-  <!-- Alpine.js -->
   <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
-  <!-- Boxicons -->
   <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" />
 </head>
 
@@ -44,9 +42,7 @@
   <!-- NAVIGATION -->
   <header class="fixed top-0 inset-x-0 z-50 bg-beige/80 backdrop-blur-md border-b border-sand/50">
     <nav class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16">
-      <!-- Logo -->
       <a href="#home" class="font-heading text-xl font-bold text-forest flex items-center gap-2">
-        <svg class="w-6 h-6 text-sage" viewBox="0 0 24 24" fill="currentColor"><path d="M17 8C8 10 5.9 16.17 3.82 21.34l1.89.66.95-2.3c.48.17.98.3 1.34.3C19 20 22 3 22 3c-1 2-8 2.25-13 3.25S2 11.5 2 13.5s1.75 3.75 1.75 3.75C7 8 17 8 17 8z"/></svg>
         <span>Franck Aming</span>
       </a>
 
@@ -101,7 +97,7 @@
         <h1 class="font-heading text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight mb-4 text-forest">
           Franck Aming
         </h1>
-        <p class="font-accent text-3xl text-sage/80 mb-6">A Student Developer who loves nature & code</p>
+        <p class="font-accent text-3xl text-sage/80 mb-6">An Aspiring Developer</p>
         <p class="font-body text-forest/60 text-lg leading-relaxed mb-8 max-w-lg">
           Crafting beautiful, thoughtful web experiences with the same care you'd give a garden — 
           patient, intentional, and always growing.
@@ -109,7 +105,6 @@
         <div class="flex flex-wrap gap-4">
           <a href="#projects" class="btn-primary group">
             View My Work
-            <i class="bx bx-leaf text-lg transition-transform group-hover:rotate-12"></i>
           </a>
           <a href="#contact" class="btn-outline">
             Get In Touch
@@ -133,7 +128,6 @@
       <!-- Avatar -->
       <div data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200" class="flex justify-center">
         <div class="relative">
-          <!-- avatar shape -->
           <div class="w-64 h-64 sm:w-80 sm:h-80 blob-1 bg-gradient-to-br from-sage via-moss to-sage-light p-1.5 animate-gentle-float">
             <div class="w-full h-full blob-1 overflow-hidden">
               <img src="static/images/profile.png"
@@ -141,6 +135,7 @@
                   class="w-full h-full object-cover object-center" />
             </div>
           </div>
+          
           <!-- Floating badges -->
           <div class="absolute -top-3 right-0 px-3 py-1.5 bg-white border border-sand rounded-xl text-xs font-sans font-semibold text-sage shadow-md animate-gentle-float" style="animation-delay:1s">
             <i class="bx bxl-python mr-1"></i>Python
@@ -224,11 +219,8 @@
             applications. I have experience in front-end and back-end technologies and always eager to learn new tools 
             and frameworks that will make me a better developer.
           </p>
-          <p class="font-accent text-xl text-sage mb-6">
-            "Like tending a garden — good code takes patience, care, and a love for growth."
-          </p>
           <a href="#contact" class="btn-primary">
-            Let's Talk <i class="bx bx-leaf text-lg"></i>
+            Let's Talk
           </a>
         </div>
       </div>
@@ -254,7 +246,7 @@
         <div class="section-divider-line"></div>
       </div>
 
-      <!-- Skills filter tabs (Alpine.js) -->
+      <!-- Skills filter tabs -->
       <div x-data="{ activeTab: 'all' }" class="space-y-10">
         <div class="flex justify-center flex-wrap gap-3" data-aos="fade-up" data-aos-delay="100">
           <template x-for="tab in ['all', 'frontend', 'backend', 'tools']" :key="tab">
@@ -381,7 +373,6 @@
       </div>
     </div>
 
-    <!-- section divider -->
     <div class="absolute bottom-0 left-0 right-0">
       <svg viewBox="0 0 1440 80" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" class="w-full h-12 sm:h-20">
         <path d="M0 80 L0 50 Q360 10 720 45 Q1080 75 1440 25 L1440 80 Z" fill="#EDE8E0"/>
@@ -404,7 +395,7 @@
         <article data-aos="fade-up" data-aos-delay="100" class="project-card group">
           <div class="h-48 bg-gradient-to-br from-sage/20 to-moss/20 flex items-center justify-center relative overflow-hidden">
             <div class="absolute inset-0 bg-gradient-to-br from-sage/30 to-moss/30 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-            <i class="bx bx-store text-6xl text-sage group-hover:scale-110 transition-transform duration-500 relative z-10 project-image"></i>
+            <img src="static/images/reviewai.png" alt="ReviewAI" class="w-full h-full object-contain p-4 group-hover:scale-105 transition-transform duration-500" />
           </div>
           <div class="p-6">
             <h3 class="text-forest font-heading text-lg font-bold mb-2 group-hover:text-sage transition-colors">ReviewAI</h3>
@@ -432,7 +423,7 @@
         <article data-aos="fade-up" data-aos-delay="200" class="project-card group">
           <div class="h-48 bg-gradient-to-br from-moss/20 to-sand/40 flex items-center justify-center relative overflow-hidden">
             <div class="absolute inset-0 bg-gradient-to-br from-moss/30 to-sage/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-            <i class="bx bx-task text-6xl text-moss group-hover:scale-110 transition-transform duration-500 relative z-10 project-image"></i>
+            <img src="static/images/3dmags.png" alt="3DMags" class="w-full h-full object-contain p-4 group-hover:scale-105 transition-transform duration-500" />
           </div>
           <div class="p-6">
             <h3 class="text-forest font-heading text-lg font-bold mb-2 group-hover:text-sage transition-colors">3DMags</h3>
@@ -458,8 +449,8 @@
         <!-- Project Card 3 -->
         <article data-aos="fade-up" data-aos-delay="300" class="project-card group">
           <div class="h-48 bg-gradient-to-br from-sage/15 to-sage-dark/10 flex items-center justify-center relative overflow-hidden">
-            <div class="absolute inset-0 bg-gradient-to-br from-sage/25 to-moss/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-            <i class="bx bx-line-chart text-6xl text-sage-dark group-hover:scale-110 transition-transform duration-500 relative z-10 project-image"></i>
+            <div class="absolute inset-0 bg-gradient-to-br from-moss/30 to-sage/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10"></div>
+            <img src="static/images/edusolve.png" alt="EduSolve" class="w-full h-full object-contain p-4 group-hover:scale-105 transition-transform duration-500" />
           </div>
           <div class="p-6">
             <h3 class="text-forest font-heading text-lg font-bold mb-2 group-hover:text-sage transition-colors">EduSolve</h3>
@@ -485,7 +476,7 @@
       </div>
     </div>
 
-    <!-- Curved section divider -->
+    <!-- section divider -->
     <div class="absolute bottom-0 left-0 right-0">
       <svg viewBox="0 0 1440 80" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" class="w-full h-12 sm:h-20">
         <path d="M0 80 L0 35 Q480 75 960 25 Q1200 5 1440 55 L1440 80 Z" fill="#F4F1EC"/>
@@ -595,10 +586,8 @@
   <footer class="bg-beige-dark border-t border-sand/50">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
       <div class="grid sm:grid-cols-3 gap-8 items-center">
-        <!-- Brand -->
         <div>
           <a href="#home" class="font-heading text-xl font-bold text-forest flex items-center gap-2">
-            <svg class="w-5 h-5 text-sage" viewBox="0 0 24 24" fill="currentColor"><path d="M17 8C8 10 5.9 16.17 3.82 21.34l1.89.66.95-2.3c.48.17.98.3 1.34.3C19 20 22 3 22 3c-1 2-8 2.25-13 3.25S2 11.5 2 13.5s1.75 3.75 1.75 3.75C7 8 17 8 17 8z"/></svg>
             Franck Aming
           </a>
           <p class="text-forest/40 text-sm font-body mt-2">Growing the web, one project at a time.</p>
@@ -622,7 +611,7 @@
       </div>
 
       <div class="mt-10 pt-6 border-t border-sand/50 text-center">
-        <p class="text-forest/40 text-sm font-sans">&copy; 2026 Franck Aming. Crafted with <i class="bx bx-leaf text-sage"></i> and care.</p>
+        <p class="text-forest/40 text-sm font-sans">&copy; 2026 Franck Aming.</p>
       </div>
     </div>
   </footer>
