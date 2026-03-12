@@ -27,13 +27,14 @@
 ::-webkit-scrollbar-thumb { background: var(--secondary); border-radius: 99px; }
 ::-webkit-scrollbar-thumb:hover { background: var(--primary); }
 
-html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; overflow-x: hidden; }
 
 body {
   background-color: var(--bg);
   color: var(--text);
   font-family: 'Lora', 'Georgia', serif;
   -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
 }
 
 /* ---------- Typography ---------- */
@@ -361,5 +362,40 @@ body {
 @media (max-width: 768px) {
   .section-title {
     font-size: 1.75rem;
+  }
+}
+
+/* ---------- Mobile-First Enhancements ---------- */
+@media (max-width: 639px) {
+  .skill-badge {
+    padding: 1rem 0.75rem;
+  }
+
+  .skill-badge i {
+    font-size: 2rem;
+  }
+
+  .nature-card {
+    padding: 1.25rem;
+  }
+
+  .btn-primary,
+  .btn-outline {
+    padding: 0.65rem 1.25rem;
+    font-size: 0.8125rem;
+  }
+
+  .social-icon {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+
+  .section-label {
+    font-size: 0.75rem;
+  }
+
+  .tag-pill {
+    font-size: 0.65rem;
+    padding: 0.2rem 0.6rem;
   }
 }
