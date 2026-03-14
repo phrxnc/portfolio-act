@@ -74,14 +74,22 @@ function portfolioApp() {
         this.showTop = window.scrollY > 500;
 
         const sections = document.querySelectorAll("section[id]");
-        let current = "home";
+        const marker = window.scrollY + 180;
+        let current = this.activeSection || "home";
+
         sections.forEach((section) => {
-        const top = section.offsetTop - 130;
-        const height = section.offsetHeight;
-        if (window.scrollY >= top && window.scrollY < top + height) {
+        if (marker >= section.offsetTop) {
             current = section.id;
         }
         });
+
+        if ((window.innerHeight + window.scrollY) >= (document.body.offsetHeight - 2)) {
+        const lastSection = sections[sections.length - 1];
+        if (lastSection) {
+            current = lastSection.id;
+        }
+        }
+
         this.activeSection = current;
     }
     };
