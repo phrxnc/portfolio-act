@@ -61,7 +61,9 @@
           @click.prevent="scrollTo(item.id)"
           :aria-label="item.label"
           :class="activeSection === item.id ? 'bg-brand-leaf text-white shadow-lg shadow-brand-green/35' : 'text-gray-300 hover:text-white hover:bg-white/10'"
-          class="nav-icon-btn w-11 h-11 rounded-xl flex items-center justify-center transition-all duration-300"
+          class="nav-icon-btn magnetic w-11 h-11 rounded-xl flex items-center justify-center transition-all duration-300"
+          data-magnetic
+          data-magnetic-strength="0.2"
         >
           <i :class="item.icon"></i>
         </a>
@@ -117,10 +119,10 @@
         </div>
 
         <div class="mt-9 flex flex-wrap items-center gap-4">
-          <a href="#contact" @click.prevent="scrollTo('contact')" class="px-8 py-3.5 rounded-xl bg-gradient-to-r from-brand-green to-brand-leaf text-white font-semibold hover:brightness-110 transition-all">
+          <a href="#contact" @click.prevent="scrollTo('contact')" class="magnetic px-8 py-3.5 rounded-xl bg-gradient-to-r from-brand-green to-brand-leaf text-white font-semibold hover:brightness-110 transition-all" data-magnetic>
             Let's Talk
           </a>
-          <a href="#projects" @click.prevent="scrollTo('projects')" class="px-8 py-3.5 rounded-xl border border-white/20 text-white font-semibold hover:border-brand-mint hover:text-brand-mint transition-all inline-flex items-center gap-2">
+          <a href="#projects" @click.prevent="scrollTo('projects')" class="magnetic px-8 py-3.5 rounded-xl border border-white/20 text-white font-semibold hover:border-brand-mint hover:text-brand-mint transition-all inline-flex items-center gap-2" data-magnetic>
             My Work <i class="fas fa-arrow-right text-sm"></i>
           </a>
         </div>
@@ -149,7 +151,7 @@
               <div class="h-48 relative overflow-hidden" :class="project.previewBg">
                 <img :src="project.image" :alt="project.title" class="w-full h-full object-contain p-4 transition-transform duration-500 hover:scale-105" />
                 <div class="absolute inset-0 bg-dark-950/75 opacity-0 hover:opacity-100 transition-all duration-500 flex items-center justify-center">
-                  <a :href="project.url" target="_blank" class="px-6 py-3 rounded-lg bg-gradient-to-r from-brand-green to-brand-leaf text-white font-bold transition-colors hover:brightness-110">
+                  <a :href="project.url" target="_blank" class="magnetic px-6 py-3 rounded-lg bg-gradient-to-r from-brand-green to-brand-leaf text-white font-bold transition-colors hover:brightness-110" data-magnetic>
                     View Code
                   </a>
                 </div>
@@ -223,7 +225,9 @@
               <button
                 @click="activeTab = tab"
                 :class="activeTab === tab ? 'bg-brand-leaf text-white border-brand-leaf' : 'bg-dark-800 text-gray-300 border-white/10 hover:border-brand-mint'"
-                class="px-5 py-2 rounded-full text-sm font-semibold capitalize transition-all border"
+                class="magnetic px-5 py-2 rounded-full text-sm font-semibold capitalize transition-all border"
+                data-magnetic
+                data-magnetic-strength="0.14"
                 x-text="tab"
               ></button>
             </template>
@@ -289,7 +293,7 @@
               <label for="message" class="block text-sm text-gray-400 mb-2">Your Message</label>
               <textarea id="message" rows="5" required class="input-dark resize-none" placeholder="Write your message here..."></textarea>
             </div>
-            <button type="submit" class="w-full sm:w-auto px-10 py-4 rounded-xl bg-gradient-to-r from-brand-green to-brand-leaf text-white font-bold transition-all hover:brightness-110">
+            <button type="submit" class="magnetic w-full sm:w-auto px-10 py-4 rounded-xl bg-gradient-to-r from-brand-green to-brand-leaf text-white font-bold transition-all hover:brightness-110" data-magnetic>
               <span x-show="!sent">Send Message</span>
               <span x-show="sent" x-cloak>Message Sent!</span>
             </button>
@@ -322,11 +326,17 @@
     x-show="showTop"
     x-transition
     @click="window.scrollTo({ top: 0, behavior: 'smooth' })"
-    class="fixed bottom-8 right-8 w-12 h-12 rounded-full bg-gradient-to-r from-brand-green to-brand-leaf text-white shadow-lg shadow-brand-green/30 flex items-center justify-center z-50"
+    class="magnetic fixed bottom-8 right-8 w-12 h-12 rounded-full bg-gradient-to-r from-brand-green to-brand-leaf text-white shadow-lg shadow-brand-green/30 flex items-center justify-center z-50"
+    data-magnetic
     aria-label="Back to top"
   >
     <i class="fas fa-arrow-up"></i>
   </button>
+
+  <!-- Custom Cursor -->
+  <div id="cursor-glow" class="custom-cursor cursor-glow" aria-hidden="true"></div>
+  <div id="cursor-ring" class="custom-cursor cursor-ring" aria-hidden="true"></div>
+  <div id="cursor-dot" class="custom-cursor cursor-dot" aria-hidden="true"></div>
 
   <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
   <script src="static/js/main.js"></script>
