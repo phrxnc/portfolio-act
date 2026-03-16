@@ -240,7 +240,23 @@
                 x-transition
                 class="skill-card"
               >
-                <i :class="skill.icon + ' text-3xl mb-2 ' + skill.color"></i>
+                <div class="h-8 mb-2 flex items-center justify-center">
+                  <template x-if="skill.iconType === 'svg'">
+                    <svg
+                      viewBox="0 0 24 24"
+                      xmlns="http://www.w3.org/2000/svg"
+                      :aria-label="skill.name"
+                      role="img"
+                      :class="'w-6 h-6 block ' + skill.color"
+                      fill="currentColor"
+                    >
+                      <path :d="skill.iconPath"></path>
+                    </svg>
+                  </template>
+                  <template x-if="skill.iconType !== 'svg'">
+                    <i :class="skill.icon + ' text-3xl leading-none ' + skill.color"></i>
+                  </template>
+                </div>
                 <p class="text-sm font-semibold text-gray-200" x-text="skill.name"></p>
               </div>
             </template>
