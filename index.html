@@ -131,9 +131,10 @@
           <p class="text-gray-400 text-lg">Relied on by projects built with modern stacks</p>
           <div class="mt-5 flex flex-wrap gap-3">
             <span class="brand-chip"><i class="bx bxl-django"></i>Django</span>
-            <span class="brand-chip"><i class="bx bxl-tailwind-css"></i>Tailwind</span>
             <span class="brand-chip"><i class="bx bxl-php"></i>Laravel</span>
+            <span class="brand-chip"><i class="bx bxl-tailwind-css"></i>Tailwind</span>
             <span class="brand-chip"><i class="bx bxl-javascript"></i>JavaScript</span>
+            <span class="brand-chip"><i class="bx bxl-wordpress"></i>WordPress</span>
           </div>
         </div>
       </section>
@@ -152,7 +153,7 @@
                 <img :src="project.image" :alt="project.title" class="w-full h-full object-contain p-4 transition-transform duration-500 hover:scale-105" />
                 <div class="absolute inset-0 bg-dark-950/75 opacity-0 hover:opacity-100 transition-all duration-500 flex items-center justify-center">
                   <a :href="project.url" target="_blank" class="magnetic px-6 py-3 rounded-lg bg-gradient-to-r from-brand-green to-brand-leaf text-white font-bold transition-colors hover:brightness-110" data-magnetic>
-                    View Code
+                    <span x-text="project.ctaLabel || 'View Code'"></span>
                   </a>
                 </div>
               </div>
